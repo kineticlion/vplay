@@ -1,0 +1,21 @@
+.key{
+  border: 1px solid green;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: .7rem;
+  user-select: none;
+}
+
+.black-key{
+  height: 75%;
+  background-color: black;
+  flex: 1 1 2px;
+  color: white;
+  font-size: .6rem;
+  z-index: 1;
+}
+
+.key-hl{
+  background: rgba(0, 0, 255, 0.4);
+}

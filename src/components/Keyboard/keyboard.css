@@ -1,0 +1,21 @@
+h1{
+  text-align: center;
+}
+
+.keyboard-container{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 80vw;
+  height: 50vh;
+}
+
+.ui-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  height: 60%;
+}
+
+
