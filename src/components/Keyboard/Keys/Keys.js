@@ -48,7 +48,9 @@ const Keys = ({octaves}) => {
             return;
         }
       }
-      KEYS.push(<Key keyType='white' keyName='C'/>); //Exceptional case
+      if(currentOctave === octaves){
+        KEYS.push(<Key keyType='white' keyName='C'/>); //Exceptional case
+      }
     }
 
   return (

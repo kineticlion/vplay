@@ -9,12 +9,14 @@ const Key = ({keyType, keyName}) => {
     e.currentTarget.classList.remove('key-hl');
   };
 
-  return keyType === 'black' ? 
-    <div className="key black-key" 
+  return keyType === 'black' ?
+  <div className="black-key-container"> 
+    <div className="black-key" 
       onMouseDown={e=>addHighlight(e)} 
       onMouseUp={e=>removeHighlight(e)} 
-      onMouseLeave={e=>removeHighlight(e)}>{ keyName }</div> :
-    <div className="key" 
+      onMouseLeave={e=>removeHighlight(e)}>{ keyName }</div>
+    </div> :
+    <div className="white-key" 
       onMouseDown={e=>addHighlight(e)} 
       onMouseUp={e=>removeHighlight(e)} 
       onMouseLeave={e=>removeHighlight(e)}>{ keyName }</div>;

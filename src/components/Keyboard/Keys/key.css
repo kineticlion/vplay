@@ -1,21 +1,32 @@
-.key{
+.white-key{
   border: 1px solid green;
-  flex: 1 1 auto;
+  flex: 1 1 1vw;
   overflow: hidden;
   text-align: center;
   font-size: .7rem;
   user-select: none;
+  z-index: 1;
+  position: relative;
 }
 
 .black-key{
   height: 75%;
   background-color: black;
-  flex: 1 1 2px;
   color: white;
   font-size: .6rem;
-  z-index: 1;
+  user-select: none;
+  position: absolute;
+  width: 1.5vw;
+  display: flex;
+  justify-content: center;
+}
+
+.black-key-container{
+  position: relative;
+  right: .9%;
+  z-index: 2;
 }
 
 .key-hl{
-  background: rgba(0, 0, 255, 0.4);
+  background: rgba(0, 0, 255, 1);
 }
