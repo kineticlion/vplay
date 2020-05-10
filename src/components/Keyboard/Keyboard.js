@@ -4,13 +4,14 @@ import Keys from './Keys/Keys';
 import './keyboard.css';
 
 const Keyboard = () => {
-  const OCTAVE_SIZE = 4;  // 25Keys = 2; 49Keys = 4;
+  const OCTAVE_SIZE = 4;  //49 keys = 4 octaves
+   const STARTING_OCTAVE = 3;
   return(
     <div className="keyboard-container">
       <div className="ui-container">
         <Display />
       </div>
-      <Keys octaves = {OCTAVE_SIZE}/>
+      <Keys octaves = {OCTAVE_SIZE} startOctave={STARTING_OCTAVE}/>
     </div>
   );
 };

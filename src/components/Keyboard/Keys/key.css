@@ -1,12 +1,21 @@
+.key{
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
+
 .white-key{
-  border: 1px solid green;
+  border: 1px solid black;
   flex: 1 1 1vw;
   overflow: hidden;
   text-align: center;
-  font-size: .7rem;
+  font-size: .8rem;
   user-select: none;
   z-index: 1;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  box-shadow: 1px 0px 1px grey;
 }
 
 .black-key{
@@ -19,6 +28,8 @@
   width: 1.5vw;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  box-shadow: 2px 0px 1px grey;
 }
 
 .black-key-container{
@@ -28,5 +39,7 @@
 }
 
 .key-hl{
-  background: rgba(0, 0, 255, 1);
+  background: rgba(0, 100, 255, 1);
+  transform: translate(.5px);
+  box-shadow: none;
 }
