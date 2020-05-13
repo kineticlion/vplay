@@ -1,14 +1,14 @@
-.key{
+.key {
   padding-bottom: 5px;
   border-radius: 3px;
 }
 
-.white-key{
+.white-key {
   border: 1px solid black;
   flex: 1 1 1vw;
   overflow: hidden;
   text-align: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
   user-select: none;
   z-index: 1;
   position: relative;
@@ -18,28 +18,28 @@
   box-shadow: 1px 0px 1px grey;
 }
 
-.black-key{
+.black-key {
   height: 75%;
   background-color: black;
   color: white;
-  font-size: .6rem;
+  font-size: 0.6rem;
   user-select: none;
   position: absolute;
   width: 1.5vw;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: 2px 0px 1px grey;
+  box-shadow: -2px 0px 1px grey;
 }
 
-.black-key-container{
+.black-key-container {
   position: relative;
-  right: .9%;
+  right: 0.9%;
   z-index: 2;
 }
 
-.key-hl{
+.key-hl {
   background: rgba(0, 100, 255, 1);
-  transform: translate(.5px);
+  transform: translate(0.5px);
   box-shadow: none;
 }

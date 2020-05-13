@@ -1,16 +1,22 @@
-html{
+html {
   box-sizing: border-box;
 }
 
-*{
+* {
   box-sizing: inherit;
   margin: 0;
 }
 
-body{
+body {
   border: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+.App {
+  box-shadow: -3px 3px 2px grey;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

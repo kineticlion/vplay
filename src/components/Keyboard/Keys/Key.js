@@ -4,32 +4,38 @@ import Soundfont from "soundfont-player";
 import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
 
 const Key = ({ keyType, keyName }) => {
-  const instrumentName = "acoustic_grand_piano";
-  const { changeNote } = useContext(KeyboardContext);
-
-  const playKey = (e) => {
-    e.currentTarget.classList.add("key-hl");
-    const note = e.currentTarget.innerHTML;
-    Soundfont.instrument(new AudioContext(), instrumentName, {
+  const { instrument, changeNote, volume, attack, duration } = useContext(
+    KeyboardContext
+  );
+  const playKey = (event) => {
+    event.currentTarget.classList.add("key-hl");
+    const note = event.currentTarget.innerHTML;
+    const audioContext = new AudioContext();
+    changeNote(note);
+    Soundfont.instrument(audioContext, instrument, {
       soundfont: "MusyngKite",
       format: "mp3",
     }).then((instrument) => {
-      instrument.play(note);
+      instrument.play(note, null, {
+        gain: volume,
+        attack: attack,
+        duration: duration,
+      });
     });
-    changeNote(note);
   };
 
-  const stopKey = (e) => {
-    e.currentTarget.classList.remove("key-hl");
+  const stopKey = (event) => {
+    changeNote("Play any key");
+    event.currentTarget.classList.remove("key-hl");
   };
 
   return keyType === "black" ? (
     <div className="black-key-container">
       <div
         className="key black-key"
-        onMouseDown={(e) => playKey(e)}
-        onMouseUp={(e) => stopKey(e)}
-        onMouseLeave={(e) => stopKey(e)}
+        onMouseDown={(event) => playKey(event)}
+        onMouseUp={(event) => stopKey(event)}
+        onMouseOut={(event) => stopKey(event)}
       >
         {keyName}
       </div>
@@ -37,13 +43,12 @@ const Key = ({ keyType, keyName }) => {
   ) : (
     <div
       className="key white-key"
-      onMouseDown={(e) => playKey(e)}
-      onMouseUp={(e) => stopKey(e)}
-      onMouseLeave={(e) => stopKey(e)}
+      onMouseDown={(event) => playKey(event)}
+      onMouseUp={(event) => stopKey(event)}
+      onMouseOut={(event) => stopKey(event)}
     >
       {keyName}
     </div>
   );
 };
-
 export default Key;

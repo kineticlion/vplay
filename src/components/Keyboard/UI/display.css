@@ -1,8 +1,9 @@
-.container{
+.container {
   border: 2px solid black;
   width: 20%;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: -2px 2px 1px grey;
 }

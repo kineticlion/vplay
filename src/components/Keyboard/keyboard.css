@@ -1,21 +1,29 @@
-h1{
+h1 {
   text-align: center;
 }
 
-.keyboard-container{
+.keyboard-container {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   width: 80vw;
   height: 50vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.ui-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.ui-container {
   border: 2px solid red;
   height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-
+.other-controls {
+  border: 1px solid black;
+  height: 10%;
+  width: 10%;
+}

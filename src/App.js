@@ -5,9 +5,11 @@ import KeyboardCtxProvider from "./components/Keyboard/contexts/KeyboardCtxProvi
 
 function App() {
   return (
-    <KeyboardCtxProvider>
-      <Keyboard />
-    </KeyboardCtxProvider>
+    <div className="App">
+      <KeyboardCtxProvider>
+        <Keyboard />
+      </KeyboardCtxProvider>
+    </div>
   );
 }
 
