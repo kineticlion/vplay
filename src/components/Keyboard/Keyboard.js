@@ -6,7 +6,7 @@ import Volume from "./UI/Controls/Volume";
 import Instruments from "./UI/Instruments";
 import Attack from "./UI/Controls/Attack";
 import Duration from "./UI/Controls/Duration";
-
+import Release from "./UI/Controls/Release";
 const Keyboard = () => {
   const OCTAVE_SIZE = 4; //49 keys = 4 octaves
   const STARTING_OCTAVE = 3;
@@ -16,9 +16,14 @@ const Keyboard = () => {
         <Instruments />
         <Display />
         <div className="controls">
-          <Volume />
-          <Attack />
-          <Duration />
+          <div className="audio-controls">
+            <Volume />
+            <Duration />
+          </div>
+          <div class="adsr-controls">
+            <Attack />
+            <Release />
+          </div>
         </div>
       </div>
       <Keys octaves={OCTAVE_SIZE} startOctave={STARTING_OCTAVE} />

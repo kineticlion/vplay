@@ -22,8 +22,12 @@ h1 {
   border-top-right-radius: 20px;
 }
 
-.other-controls {
-  border: 1px solid black;
-  height: 10%;
-  width: 10%;
+.controls {
+  font-size: 0.8rem;
+  display: flex;
+}
+
+.audio-controls,
+.adsr-controls {
+  padding: 20px;
 }

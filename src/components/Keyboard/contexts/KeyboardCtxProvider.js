@@ -8,6 +8,7 @@ const KeyboardCtxProvider = (props) => {
   const [instrument, setInstrument] = useState("acoustic_grand_piano");
   const [attack, setAttack] = useState(0);
   const [duration, setDuration] = useState(1.0);
+  const [release, setRelease] = useState(1.0);
   const changeInstrument = (newInstrument) => {
     setInstrument(newInstrument);
   };
@@ -23,6 +24,9 @@ const KeyboardCtxProvider = (props) => {
   const changeDuration = (newDuration) => {
     setDuration(newDuration * 0.1);
   };
+  const changeRelease = (newRelease) => {
+    setRelease(newRelease * 0.1);
+  };
   return (
     <KeyboardContext.Provider
       value={{
@@ -36,6 +40,8 @@ const KeyboardCtxProvider = (props) => {
         changeAttack,
         duration,
         changeDuration,
+        release,
+        changeRelease,
       }}
     >
       {props.children}

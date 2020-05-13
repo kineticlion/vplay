@@ -4,9 +4,14 @@ import Soundfont from "soundfont-player";
 import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
 
 const Key = ({ keyType, keyName }) => {
-  const { instrument, changeNote, volume, attack, duration } = useContext(
-    KeyboardContext
-  );
+  const {
+    instrument,
+    changeNote,
+    volume,
+    attack,
+    duration,
+    release,
+  } = useContext(KeyboardContext);
   const playKey = (event) => {
     event.currentTarget.classList.add("key-hl");
     const note = event.currentTarget.innerHTML;
@@ -20,6 +25,7 @@ const Key = ({ keyType, keyName }) => {
         gain: volume,
         attack: attack,
         duration: duration,
+        release: release,
       });
     });
   };
