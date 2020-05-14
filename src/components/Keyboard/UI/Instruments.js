@@ -20,8 +20,8 @@ const Instruments = () => {
         value={instrument}
         onChange={(e) => changeInstrument(e.target.value)}
       >
-        {instruments.map((instrument) => (
-          <option>{instrument}</option>
+        {instruments.map((instrument, index) => (
+          <option key={index}>{instrument}</option>
         ))}
       </select>
     </div>
