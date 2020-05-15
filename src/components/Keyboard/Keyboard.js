@@ -13,7 +13,7 @@ import {KeyboardContext} from "./contexts/KeyboardCtxProvider";
 const Keyboard = () => {
   const OCTAVE_SIZE = 4; //49 keys = 4 octaves
   const STARTING_OCTAVE = 3;
-  const {audioCtx,instrumentName,changeInstrument,currentNote} = useContext(KeyboardContext);
+  const {audioCtx,instrumentName,changeInstrument} = useContext(KeyboardContext);
   const hostName = 'https://d1pzp51pvbm36p.cloudfront.net';
   const loadInstrument = useCallback(() =>{
     Soundfont.instrument(audioCtx, instrumentName, {
@@ -35,7 +35,8 @@ const Keyboard = () => {
     <div className="keyboard-container">
       <div className="ui-container">
         <Instruments />
-        <Display currentNote={currentNote}/>
+
+        <Display/>
         <div className="controls">
           <div className="audio-controls">
             <Volume />

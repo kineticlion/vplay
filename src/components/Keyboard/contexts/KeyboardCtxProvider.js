@@ -1,9 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, {createContext, useContext, useState} from "react";
 
 export const KeyboardContext = createContext();
 
 const KeyboardCtxProvider = (props) => {
-    const [currentNote,setCurrentNote] = useState('Play any key');
   const [volume, setVolume] = useState(4.0);
   const [instrumentName, setInstrumentName] = useState("acoustic_grand_piano");
   const [attack, setAttack] = useState(0);
@@ -41,9 +40,6 @@ const KeyboardCtxProvider = (props) => {
   const changeKeys = (keys) =>{
       setKeys([...keys]);
   }
-  const changeCurrentNote = (newNote) =>{
-      setCurrentNote(newNote);
-  }
     const playKey = (event) => {
         event.currentTarget.classList.add("key-hl");
         const note = event.currentTarget.innerHTML;
@@ -57,16 +53,14 @@ const KeyboardCtxProvider = (props) => {
         });
     };
 
-
     const stopKey = (event) => {
         event.currentTarget.classList.remove("key-hl");
     };
 
-    const handleEvent = (event,keyName) =>{
+    const handleEvent = (event) =>{
         if(event.type==='mouseup'){
             changeIsDown(false);
             stopKey(event);
-
         }
         if(event.type==="mousedown"){
             changeIsDown(true);
@@ -98,8 +92,6 @@ const KeyboardCtxProvider = (props) => {
   return (
     <KeyboardContext.Provider
       value={{
-          currentNote,
-          changeCurrentNote,
         volume,
         changeVolume,
         instrumentName,

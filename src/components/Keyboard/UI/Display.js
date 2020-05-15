@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import "./display.css";
+import {DisplayContext} from "../contexts/DisplayCtxProvider";
 
-const Display = ({currentNote}) => {
+const Display = () => {
+    const {note} = useContext(DisplayContext);
   return (
     <div className="container">
-        <h2>{currentNote}</h2>
+        <h2>{note}</h2>
     </div>
   );
 };

@@ -1,18 +1,20 @@
 import React, {useContext} from "react";
 import "./key.css";
 import {KeyboardContext} from "../contexts/KeyboardCtxProvider";
+import {DisplayContext} from "../contexts/DisplayCtxProvider";
 
 const Key = ({ keyType, keyName}) => {
-  const { handleEvent,changeCurrentNote } = useContext(KeyboardContext);
+  const { handleEvent } = useContext(KeyboardContext);
+  const {changeNote} = useContext(DisplayContext);
   return keyType === "black" ? (
     <div className="black-key-container">
       <div
         className="key black-key"
-        onMouseDown={(event) => {handleEvent(event); changeCurrentNote(keyName);}}
-        onMouseUp={(event) => {handleEvent(event); changeCurrentNote(keyName);}}
+        onMouseDown={(event) => {handleEvent(event);changeNote(event);}}
+        onMouseUp={(event) => {handleEvent(event);changeNote(event);}}
         onMouseLeave={(event) => handleEvent(event)}
         onMouseEnter={(event) => handleEvent(event)}
-        onMouseOver={(event) => handleEvent(event)}
+        onMouseOver={(event) => {handleEvent(event);changeNote(event);}}
       >
         {keyName}
       </div>
@@ -20,11 +22,11 @@ const Key = ({ keyType, keyName}) => {
   ) : (
     <div
       className="key white-key"
-      onMouseDown={(event) => {handleEvent(event); changeCurrentNote(keyName);}}
-      onMouseUp={(event) => {handleEvent(event); changeCurrentNote(keyName);}}
+      onMouseDown={(event) => {handleEvent(event);changeNote(event);}}
+      onMouseUp={(event) => {handleEvent(event);changeNote(event);}}
       onMouseLeave={(event) => handleEvent(event)}
       onMouseEnter={(event) => handleEvent(event)}
-      onMouseOver={(event) => handleEvent(event)}
+      onMouseOver={(event) => {handleEvent(event);changeNote(event);}}
     >
       {keyName}
     </div>
