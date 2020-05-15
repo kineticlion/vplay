@@ -3,7 +3,7 @@ import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
 
 const Instruments = () => {
   const [instruments, setInstruments] = useState([]);
-  const { instrument, changeInstrument } = useContext(KeyboardContext);
+  const { instrumentName, changeInstrumentName } = useContext(KeyboardContext);
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/danigb/soundfont-player/master/names/musyngkite.json"
@@ -17,8 +17,8 @@ const Instruments = () => {
       <h3>Instrument</h3>
       <select
         size="6"
-        value={instrument}
-        onChange={(e) => changeInstrument(e.target.value)}
+        value={instrumentName}
+        onChange={(e) => changeInstrumentName(e.target.value)}
       >
         {instruments.map((instrument, index) => (
           <option key={index}>{instrument}</option>
