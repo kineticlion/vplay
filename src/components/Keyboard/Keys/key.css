@@ -1,21 +1,19 @@
 .key {
-  padding-bottom: 5px;
-  border-radius: 3px;
+  padding: 15px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .white-key {
-  border: 1px solid black;
   flex: 1 1 1vw;
   overflow: hidden;
-  text-align: center;
   font-size: 0.8rem;
-  user-select: none;
   z-index: 1;
   position: relative;
   display: flex;
+  background-color: whitesmoke;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: 1px 0px 1px grey;
+  box-shadow:inset .5px 1px 1px black;
 }
 
 .black-key {
@@ -29,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: -2px 0px 1px grey;
+  box-shadow: inset 0px 0px 10px dimgrey;
 }
 
 .black-key-container {
@@ -39,7 +37,9 @@
 }
 
 .key-hl {
-  background: rgba(0, 100, 255, 1);
-  transform: translate(0.5px);
-  box-shadow: none;
+  transform:scale(1.1) translateY(.6vh);
+  box-shadow: inset 0 0 5px black;
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f53803 0%, #f5d020 74%);
+  border-radius: 6px 6px 10px 10px;
 }

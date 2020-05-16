@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { KeyboardContext } from "../../contexts/KeyboardCtxProvider";
 
-const Duration = () => {
+const Sustain = () => {
   const { duration, changeDuration } = useContext(KeyboardContext);
   const handleUpdate = (e) => {
     changeDuration(e.target.value);
   };
   return (
     <div>
-      <h3>Duration : {parseFloat(duration * 1).toFixed(1)}s</h3>
+      <h3>Sustain : {parseFloat(duration * 1).toFixed(1)}s</h3>
       <input
         type="range"
         min="1"
@@ -20,4 +20,4 @@ const Duration = () => {
   );
 };
 
-export default Duration;
+export default Sustain;

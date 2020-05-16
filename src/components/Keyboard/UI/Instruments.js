@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
-
+import './instrument.css';
 const Instruments = () => {
   const [instruments, setInstruments] = useState([]);
   const { instrumentName, changeInstrumentName } = useContext(KeyboardContext);
@@ -13,8 +13,7 @@ const Instruments = () => {
   }, []);
 
   return (
-    <div>
-      <h3>Instrument</h3>
+    <div className='instrument'>
       <select
         size="6"
         value={instrumentName}

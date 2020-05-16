@@ -1,10 +1,16 @@
 .container {
-  border: 2px solid black;
+  border-radius: 20px;
   width: 20%;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -2px 2px 1px grey;
+  box-shadow: inset 0px 0px 20px black;
   margin-left: 10vw;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.container:hover{
+  transform: scale(1.2);
 }

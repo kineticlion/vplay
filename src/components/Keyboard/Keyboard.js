@@ -5,7 +5,7 @@ import Keys from "./Keys/Keys";
 import Volume from "./UI/Controls/Volume";
 import Instruments from "./UI/Instruments";
 import Attack from "./UI/Controls/Attack";
-import Duration from "./UI/Controls/Duration";
+import Sustain from "./UI/Controls/Sustain";
 import Release from "./UI/Controls/Release";
 import Soundfont from "soundfont-player";
 import {KeyboardContext} from "./contexts/KeyboardCtxProvider";
@@ -35,12 +35,11 @@ const Keyboard = () => {
     <div className="keyboard-container">
       <div className="ui-container">
         <Instruments />
-
         <Display/>
         <div className="controls">
           <div className="audio-controls">
             <Volume />
-            <Duration />
+            <Sustain />
           </div>
           <div className="adsr-controls">
             <Attack />
