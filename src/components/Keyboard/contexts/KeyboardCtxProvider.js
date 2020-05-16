@@ -8,7 +8,7 @@ const KeyboardCtxProvider = (props) => {
   const [attack, setAttack] = useState(0);
   const [duration, setDuration] = useState(1.0);
   const [release, setRelease] = useState(1.0);
-  const [audioCtx, setAudioCtx] = useState(new window.AudioContext());
+  const [audioCtx, setAudioCtx] = useState(new (window.AudioContext||window.webkitAudioContext)());
   const [nodes,setNodes] = useState(null);
   const [instrument,setInstrument] = useState(null);
   const [isDown,setIsDown] = useState(false);
