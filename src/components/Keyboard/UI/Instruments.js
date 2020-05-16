@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
+import fetch from 'cross-fetch';
 import './instrument.css';
 const Instruments = () => {
   const [instruments, setInstruments] = useState([]);
