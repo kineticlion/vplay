@@ -19,7 +19,7 @@ body {
   perspective: 200px;
 }
 .App {
-  transform: rotateX(1deg) rotateZ(0deg);
+  transform: rotateX(1deg) rotateZ(0deg) skewX(-2deg);
   user-select: none;
   border: 10px solid black;
   border-bottom: 20px solid black;
