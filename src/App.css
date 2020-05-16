@@ -16,14 +16,14 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  perspective: 200px;
+  perspective: 150px;
 }
 .App {
-  transform: rotateX(1deg) rotateZ(0deg) skewX(-2deg);
+  transform: rotateX(0.5deg) rotateZ(0deg) skewX(1deg);
   user-select: none;
   border: 10px solid black;
   border-bottom: 20px solid black;
   background-color: black;
   border-radius: 20px 20px;
-  box-shadow: 30px 5px 40px black;
+  box-shadow: 10px 5px 40px black;
 }

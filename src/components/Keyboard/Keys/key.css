@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: inset 0px 0px 2px grey, 5px 0px 5px black;
+  box-shadow: inset 0px 0px 2px grey, -3px 0px 5px black;
 }
 
 .black-key-container {
@@ -38,7 +38,7 @@
 }
 
 .key-hl {
-  transform:scale(1.1) translateY(.6vh);
+  transform:scale(1.1) translateY(-.3vh);
   box-shadow: inset 0 0 2px grey;
   background-color: #f5d020;
   background-image: linear-gradient(315deg, #f53803 0%, #f5d020 74%);
