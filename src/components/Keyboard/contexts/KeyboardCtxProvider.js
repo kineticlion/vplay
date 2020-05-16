@@ -52,42 +52,29 @@ const KeyboardCtxProvider = (props) => {
             });
         });
     };
-
     const stopKey = (event) => {
         event.currentTarget.classList.remove("key-hl");
     };
 
     const handleEvent = (event) =>{
-        if(event.type==='mouseup'){
-            changeIsDown(false);
-            stopKey(event);
-        }
-        if(event.type==="mousedown"){
-            changeIsDown(true);
-            playKey(event);
-        }
-        if(event.type==='mouseenter'){
-            if(!isDown){
-                stopKey(event);
-            }  else{
+        switch (event.type) {
+            case 'mousedown':
+                setIsDown(true);
                 playKey(event);
-                changeIsDown(true);
-            }
-        }
-        if(event.type==='mouseleave'){
-            stopKey(event);
-            if(!isDown){
-                changeIsDown(false);
-            }
-        }
-        if(event.type === 'mouseover'){
-            if(!isDown){
+                break;
+            case 'mouseup':
+                setIsDown(false);
                 stopKey(event);
-            } else {
-                playKey(event);
-            }
+                break;
+            case 'mouseenter':
+                if(isDown){
+                    playKey(event);
+                }
+                break;
+            default:
+                stopKey(event);
+                break;
         }
-
     };
   return (
     <KeyboardContext.Provider
@@ -114,7 +101,7 @@ const KeyboardCtxProvider = (props) => {
           playKey,
           stopKey,
           keys,
-          changeKeys
+          changeKeys,
       }}
     >
       {props.children}

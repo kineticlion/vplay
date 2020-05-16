@@ -12,7 +12,7 @@ const Duration = () => {
       <input
         type="range"
         min="1"
-        max="50"
+        max="40"
         defaultValue="10"
         onChange={handleUpdate}
       />

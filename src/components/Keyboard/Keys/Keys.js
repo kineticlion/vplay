@@ -5,8 +5,7 @@ import {KeyboardContext} from "../contexts/KeyboardCtxProvider";
 
 const Keys = ({ octaves, startOctave}) => {
   const OCTAVE_LENGTH = 12;
-  const {keys,changeKeys} = useContext(KeyboardContext);
-
+  const {keys,changeKeys,handleEvent} = useContext(KeyboardContext);
    const buildKeys = () => {
     const KEYS = [];
      for (
