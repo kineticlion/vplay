@@ -1,41 +1,47 @@
-import React, {useCallback, useContext, useEffect} from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import "./keyboard.css";
 import Display from "./UI/Display";
 import Keys from "./Keys/Keys";
 import Volume from "./UI/Controls/Volume";
-import Instruments from "./UI/Instruments";
 import Attack from "./UI/Controls/Attack";
 import Sustain from "./UI/Controls/Sustain";
 import Release from "./UI/Controls/Release";
 import Soundfont from "soundfont-player";
-import {KeyboardContext} from "./contexts/KeyboardCtxProvider";
-
+import { KeyboardContext } from "./contexts/KeyboardCtxProvider";
+import Instruments from "./UI/Instruments";
+import Spinner from "react-bootstrap/Spinner";
 const Keyboard = () => {
+  const [isLoading, setIsloading] = useState(true);
   const OCTAVE_SIZE = 4; //49 keys = 4 octaves
   const STARTING_OCTAVE = 3;
-  const {audioCtx,instrumentName,changeInstrument} = useContext(KeyboardContext);
-  const hostName = 'https://d1pzp51pvbm36p.cloudfront.net';
-  const loadInstrument = useCallback(() =>{
+  const { audioCtx, instrumentName, changeInstrument } = useContext(
+    KeyboardContext
+  );
+  const hostName = "https://d1pzp51pvbm36p.cloudfront.net";
+  const loadInstrument = useCallback(() => {
     Soundfont.instrument(audioCtx, instrumentName, {
-      format: 'mp3',
+      format: "mp3",
       soundfont: "MusyngKite",
-      nameToUrl:   (instrumentName, soundfont, format) => {
+      nameToUrl: (instrumentName, soundfont, format) => {
         return `${hostName}/${soundfont}/${instrumentName}-${format}.js`;
       },
-    }).then(instrument => {
+    }).then((instrument) => {
       changeInstrument(instrument);
+      setIsloading(false);
     });
-  },[instrumentName]);
+  }, [instrumentName]);
 
-  useEffect(()=>{
+  useEffect(() => {
     loadInstrument();
-  },[loadInstrument]);
+  }, [loadInstrument]);
 
-  return (
+  return isLoading ? (
+    <Spinner animation="border" style={{ padding: 100, fontSize: 10 }} />
+  ) : (
     <div className="keyboard-container">
       <div className="ui-container">
         <Instruments />
-        <Display/>
+        <Display />
         <div className="controls">
           <div className="audio-controls">
             <Volume />

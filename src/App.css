@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 
 html {
   box-sizing: border-box;
@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   outline: none;
-  font-family: 'Quantico', sans-serif;
+  font-family: "Quantico", sans-serif;
 }
 
 body {
@@ -16,15 +16,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  perspective: 150px;
+  perspective: 300px;
 }
 
 .App {
-  transform: rotateX(0.5deg) rotateZ(0deg) skewX(1deg);
+  transform: rotateX(0.5deg);
   user-select: none;
-  border: 10px solid black;
-  border-bottom: 20px solid black;
-  background-color: black;
+  -webkit-user-select: none;
   border-radius: 20px 20px;
-  box-shadow: 10px 5px 40px black;
 }

@@ -5,12 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0px 0px 20px black;
-  margin-left: 10vw;
+  box-shadow: inset 0px 0px 20px black, 2px 20px 20px black;
+  margin-left: 13vw;
   background-color: whitesmoke;
   color: black;
 }
 
-.container:hover{
-  transform: scale(1.2);
+.container h2:hover,
+.container {
+  font-size: 2.5rem;
+  cursor: pointer;
 }
