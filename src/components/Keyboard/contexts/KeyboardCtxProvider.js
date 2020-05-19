@@ -87,6 +87,8 @@ const KeyboardCtxProvider = (props) => {
 
   const removeEffects = (event) => {
     event.target.classList.remove("key-hl");
+    document.querySelector(".keyboard-container").style.boxShadow =
+      "0px 40px 60px orange";
   };
   const playKey = (event) => {
     addEffects(event);
