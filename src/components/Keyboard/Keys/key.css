@@ -7,6 +7,7 @@
 
 .white-key {
   flex: 1;
+  font-weight: bold;
   font-size: 1.2rem;
   width: 1vw;
   z-index: 1;
@@ -22,15 +23,16 @@
   height: 75%;
   background-color: black;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   user-select: none;
+  font-weight: 100;
   position: absolute;
   width: 1.5vw;
   top: -5px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: inset 0px 0px 2px black, -3px 0px 5px black, 0 2px #999;
+  box-shadow: 1px 3.5px #999;
 }
 
 .black-key-container {
@@ -40,10 +42,10 @@
 }
 
 .key-hl {
-  transform: translateY(0.5vh);
+  transform: translateY(0.2vh);
   background-color: #f5d020;
   background-image: linear-gradient(315deg, #f53803 0%, #f5d020 74%);
   border-radius: 6px 6px 10px 10px;
-  font-size: 1.2rem;
-  box-shadow: 0 1px #666;
+  box-shadow: 0 2px #666;
+  transition: all 0.15s;
 }

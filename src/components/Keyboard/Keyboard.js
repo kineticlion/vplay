@@ -12,7 +12,7 @@ import Instruments from "./UI/Instruments";
 import Spinner from "react-bootstrap/Spinner";
 const Keyboard = () => {
   const [isLoading, setIsloading] = useState(true);
-  const OCTAVE_SIZE = 4; //49 keys = 4 octaves
+  const OCTAVES = 4; //set Size of keys
   const STARTING_OCTAVE = 3;
   const { audioCtx, instrumentName, changeInstrument } = useContext(
     KeyboardContext
@@ -45,15 +45,15 @@ const Keyboard = () => {
         <div className="controls">
           <div className="audio-controls">
             <Volume />
-            <Sustain />
           </div>
           <div className="adsr-controls">
             <Attack />
             <Release />
+            <Sustain />
           </div>
         </div>
       </div>
-      <Keys octaves={OCTAVE_SIZE} startOctave={STARTING_OCTAVE} />
+      <Keys octaves={OCTAVES} startOctave={STARTING_OCTAVE} />
     </div>
   );
 };

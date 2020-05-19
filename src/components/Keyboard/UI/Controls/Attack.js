@@ -7,8 +7,8 @@ const Attack = () => {
     changeAttack(e.target.value);
   };
   return (
-    <div>
-      <h3>Attack : {parseFloat(attack * 1).toFixed(1)}s</h3>
+    <div style={{ textAlign: "center" }}>
+      <h4>ATTACK : {parseFloat(attack * 1).toFixed(1)}s</h4>
       <input
         type="range"
         min="0"

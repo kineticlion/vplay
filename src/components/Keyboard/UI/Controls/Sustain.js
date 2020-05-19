@@ -7,8 +7,8 @@ const Sustain = () => {
     changeDuration(e.target.value);
   };
   return (
-    <div>
-      <h3>Sustain : {parseFloat(duration * 1).toFixed(1)}s</h3>
+    <div style={{ textAlign: "center" }}>
+      <h4>SUSTAIN : {parseFloat(duration * 1).toFixed(1)}s</h4>
       <input
         type="range"
         min="1"

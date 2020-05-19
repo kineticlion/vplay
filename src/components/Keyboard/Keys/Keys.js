@@ -1,11 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Key from "./Key";
 import "./keys.css";
 import { KeyboardContext } from "../contexts/KeyboardCtxProvider";
-
+import Spinner from "react-bootstrap/Spinner";
 const Keys = ({ octaves, startOctave }) => {
   const OCTAVE_LENGTH = 12;
-  const { keys, changeKeys } = useContext(KeyboardContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const { keys, changeKeys, instrument } = useContext(KeyboardContext);
   const buildKeys = () => {
     const KEYS = [];
     for (
@@ -67,9 +68,25 @@ const Keys = ({ octaves, startOctave }) => {
   useEffect(() => {
     let KEYS = buildKeys();
     changeKeys(KEYS);
-  }, []);
+    setIsLoading(true);
+  }, [instrument]);
 
-  return (
+  useEffect(() => {
+    setIsLoading(false);
+  }, [instrument]);
+
+  return isLoading ? (
+    <Spinner
+      style={{
+        fontSize: 20,
+        marginLeft: "38vw",
+        marginTop: "5vh",
+        padding: 25,
+        color: "white",
+      }}
+      animation="border"
+    />
+  ) : (
     <div className="keys-container">
       {keys.map((key, index) => (
         <React.Fragment key={index}>{key}</React.Fragment>

@@ -1,19 +1,23 @@
 .instrument select {
   background-color: whitesmoke;
-  box-shadow: inset 0px 0px 20px black, 2px 20px 20px black;
+  box-shadow: inset 0px 0px 10px black, 1px 10px 20px black;
   padding: 15px;
   border-radius: 20px 8px 8px 20px;
-  margin-left: 5vw;
-  font-size: 1.2rem;
+  margin-left: 3vw;
+  font-size: 1.3rem;
   cursor: pointer;
+  width: 9vw;
+  text-transform: uppercase;
+  height: 14vh;
 }
 
-.instrument:hover {
-  transform: scale(1.2);
+.instrument option:hover {
+  font-size: 1.6rem;
+  font-weight: bolder;
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 20px;
   border-bottom-right-radius: 100px;
 }
 
@@ -26,7 +30,7 @@
 ::-webkit-scrollbar-thumb {
   background-color: black;
   border-radius: 20px;
-  height: 30px;
+  height: 40px;
 }
 
 /* Handle on hover */
@@ -36,7 +40,7 @@
 
 input[type="range"] {
   -webkit-appearance: none;
-  margin: 5px 0;
+  margin: 6px 0;
   width: 100%;
 }
 input[type="range"]:focus {

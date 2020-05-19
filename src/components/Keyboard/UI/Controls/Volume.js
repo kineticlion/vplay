@@ -7,8 +7,8 @@ const Volume = () => {
     changeVolume(e.target.value);
   };
   return (
-    <div className="volume">
-      <h3>Volume : {parseInt(volume * 10)}%</h3>
+    <div style={{ textAlign: "center" }}>
+      <h4>VOLUME : {parseInt(volume * 10)}%</h4>
       <input
         type="range"
         min="0"
