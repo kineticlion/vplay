@@ -42,7 +42,11 @@ const KeyboardCtxProvider = (props) => {
   const changeKeys = (keys) => {
     setKeys([...keys]);
   };
+  const changeBackgroundHighlight = (event) =>{
+    document.querySelector('.keyboard-container').style.boxShadow = `0px 40px 60px ${getRandomColor()}`;
+  };
   const playKey = (event) => {
+    changeBackgroundHighlight(event);
     event.currentTarget.classList.add("key-hl");
     const note = event.currentTarget.innerHTML;
     audioCtx.resume().then(() => {
@@ -57,7 +61,9 @@ const KeyboardCtxProvider = (props) => {
   const stopKey = (event) => {
     event.currentTarget.classList.remove("key-hl");
   };
-
+  const getRandomColor = () =>{
+    return '#' + (0x1000000 + Math.random() * 0xFFFFFF).toString(16).substr(1,6);
+  };
   const handleEvent = (event) => {
     switch (event.type) {
       case "mousedown":
@@ -104,6 +110,7 @@ const KeyboardCtxProvider = (props) => {
         stopKey,
         keys,
         changeKeys,
+        changeBackgroundHighlight
       }}
     >
       {props.children}

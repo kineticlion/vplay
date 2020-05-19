@@ -4,7 +4,7 @@ import {KeyboardContext} from "../contexts/KeyboardCtxProvider";
 import {DisplayContext} from "../contexts/DisplayCtxProvider";
 
 const Key = ({ keyType, keyName}) => {
-  const { handleEvent } = useContext(KeyboardContext);
+  const { handleEvent} = useContext(KeyboardContext);
   const {changeNote} = useContext(DisplayContext);
   return keyType === "black" ? (
     <div className="black-key-container">
