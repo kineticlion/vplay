@@ -125,9 +125,6 @@ const KeyboardCtxProvider = (props) => {
           playKey(event);
         }
         break;
-      case "keydown":
-        console.log(event.target);
-        break;
       default:
         stopKey(event);
         break;
