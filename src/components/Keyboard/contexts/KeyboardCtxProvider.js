@@ -70,11 +70,11 @@ const KeyboardCtxProvider = (props) => {
           isAccidental: NOTES[currentKey].isAccidental,
         });
       }
-      KEYS.push({
-        note: `${NOTES[0].note}${currentOctave + 1}`,
-        isAccidental: false,
-      });
     }
+    KEYS.push({
+      note: `${NOTES[0].note}${octaves}`,
+      isAccidental: false,
+    });
     setKeys([...KEYS]);
   };
   const addEffects = (event) => {
