@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <KeyboardCtxProvider>
         <DisplayCtxProvider>
-          <Keyboard />
+          <Keyboard tabIndex="0"/>
         </DisplayCtxProvider>
       </KeyboardCtxProvider>
     </div>

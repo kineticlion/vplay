@@ -1,7 +1,6 @@
 .key {
   padding: 15px;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 0px 20px 30px black;
   cursor: pointer;
 }
 
@@ -16,10 +15,11 @@
   background-color: whitesmoke;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: inset 0px 0px 2px black, 5px 0px 10px black, 0 5px #999;
+  box-shadow: inset 0px 0px 2px black, 0px 3px 5px whitesmoke;
 }
 
 .black-key {
+  width: 100%;
   height: 75%;
   background-color: black;
   color: white;
@@ -32,20 +32,19 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  box-shadow: 1px 3.5px #999;
+  box-shadow: 2px 2px 2px grey;
 }
 
 .black-key-container {
   position: relative;
-  right: 0.9%;
   z-index: 2;
+  display: flex;
+  justify-content: center;
 }
 
 .key-hl {
-  transform: translateY(0.2vh);
   background-color: #f5d020;
   background-image: linear-gradient(315deg, #f53803 0%, #f5d020 74%);
   border-radius: 6px 6px 10px 10px;
   box-shadow: 0 2px #666;
-  transition: all 0.15s;
 }

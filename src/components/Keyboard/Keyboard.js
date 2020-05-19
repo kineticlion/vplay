@@ -14,9 +14,12 @@ const Keyboard = () => {
   const [isLoading, setIsloading] = useState(true);
   const OCTAVES = 4; //set Size of keys
   const STARTING_OCTAVE = 3;
-  const { audioCtx, instrumentName, changeInstrument } = useContext(
-    KeyboardContext
-  );
+  const {
+    audioCtx,
+    instrumentName,
+    changeInstrument,
+    handleEvent,
+  } = useContext(KeyboardContext);
   const hostName = "https://d1pzp51pvbm36p.cloudfront.net";
   const loadInstrument = useCallback(() => {
     Soundfont.instrument(audioCtx, instrumentName, {
@@ -53,7 +56,9 @@ const Keyboard = () => {
           </div>
         </div>
       </div>
-      <Keys octaves={OCTAVES} startOctave={STARTING_OCTAVE} />
+      <div className="keys-container">
+        <Keys octaves={OCTAVES} startOctave={STARTING_OCTAVE} />
+      </div>
     </div>
   );
 };

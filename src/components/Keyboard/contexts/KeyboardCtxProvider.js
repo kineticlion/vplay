@@ -42,12 +42,54 @@ const KeyboardCtxProvider = (props) => {
   const changeKeys = (keys) => {
     setKeys([...keys]);
   };
-  const changeBackgroundHighlight = (event) =>{
-    document.querySelector('.keyboard-container').style.boxShadow = `0px 40px 60px ${getRandomColor()}`;
+  const buildKeys = (startOctave, octaves) => {
+    const NOTES = [
+      { note: "C", isAccidental: false },
+      { note: "C#", isAccidental: true },
+      { note: "D", isAccidental: false },
+      { note: "D#", isAccidental: true },
+      { note: "E", isAccidental: false },
+      { note: "F", isAccidental: false },
+      { note: "F#", isAccidental: true },
+      { note: "G", isAccidental: false },
+      { note: "G#", isAccidental: true },
+      { note: "A", isAccidental: false },
+      { note: "A#", isAccidental: true },
+      { note: "B", isAccidental: false },
+    ];
+    const KEYS = [];
+    const OCTAVE_LENGTH = 11;
+    for (
+      let currentOctave = startOctave;
+      currentOctave < octaves + startOctave;
+      currentOctave++
+    ) {
+      for (let currentKey = 0; currentKey <= OCTAVE_LENGTH; currentKey++) {
+        KEYS.push({
+          note: `${NOTES[currentKey].note}${currentOctave}`,
+          isAccidental: NOTES[currentKey].isAccidental,
+        });
+      }
+      KEYS.push({
+        note: `${NOTES[0].note}${currentOctave + 1}`,
+        isAccidental: false,
+      });
+    }
+    setKeys([...KEYS]);
+  };
+  const addEffects = (event) => {
+    const randomColor = getRandomColor();
+    document.querySelector(
+      ".keyboard-container"
+    ).style.boxShadow = `0px 40px 60px ${randomColor}`;
+    event.target.classList.add("key-hl");
+  };
+
+  const removeEffects = (event) => {
+    event.target.classList.remove("key-hl");
   };
   const playKey = (event) => {
-    changeBackgroundHighlight(event);
-    event.currentTarget.classList.add("key-hl");
+    addEffects(event);
     const note = event.currentTarget.innerHTML;
     audioCtx.resume().then(() => {
       instrument.play(note, null, {
@@ -59,10 +101,12 @@ const KeyboardCtxProvider = (props) => {
     });
   };
   const stopKey = (event) => {
-    event.currentTarget.classList.remove("key-hl");
+    removeEffects(event);
   };
-  const getRandomColor = () =>{
-    return '#' + (0x1000000 + Math.random() * 0xFFFFFF).toString(16).substr(1,6);
+  const getRandomColor = () => {
+    return (
+      "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
+    );
   };
   const handleEvent = (event) => {
     switch (event.type) {
@@ -78,6 +122,9 @@ const KeyboardCtxProvider = (props) => {
         if (isDown) {
           playKey(event);
         }
+        break;
+      case "keydown":
+        console.log(event.target);
         break;
       default:
         stopKey(event);
@@ -110,7 +157,7 @@ const KeyboardCtxProvider = (props) => {
         stopKey,
         keys,
         changeKeys,
-        changeBackgroundHighlight
+        buildKeys,
       }}
     >
       {props.children}

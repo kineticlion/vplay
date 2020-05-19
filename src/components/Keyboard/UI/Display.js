@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import "./display.css";
 import { DisplayContext } from "../contexts/DisplayCtxProvider";
 
