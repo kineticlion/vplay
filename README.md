@@ -22,3 +22,6 @@
 - :heavy_check_mark: Run 'npm i' command in the terminal for node_modules
 - :heavy_check_mark: Run 'npm start' to run a development server
 
+# Contributers :busts_in_silhouette:
+- @kineticlion :hand:
+
