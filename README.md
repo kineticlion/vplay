@@ -1,39 +1,24 @@
-# vPlay
-vPlay - An instrument simulator project
+# vPlay :musical_keyboard:
+- vPlay - An instrument simulator project designed for musicians
 
-## Live Demon
-### https://vplay.netlify.app/
+# Idea :bulb:
+- The app was designed to simulte musical instruments for musicians. 
+- It is entirely developed in react with css for design.
 
-## Available Scripts
+# Features :boom:
+:heavy_check_mark: Multiple keyboard sound effects.
+:heavy_check_mark: Smooth,Efficient and easy to use.
+:heavy_check_mark: No Local Storage.
+:heavy_check_mark: Online access.
+:heavy_check_mark: High quality sound.
+:heavy_check_mark: Sound manipulation controls.
 
-In the project directory, you can run:
+## Live Demo :computer:
+### https://vplay.netlify.app/ :point_left:
 
-### `npm start`
+# How to use :question:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+:heavy_check_mark: Clone the project
+:heavy_check_mark: Run 'npm i' command in the terminal for node_modules
+:heavy_check_mark: Run 'npm start' to run a development server
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
